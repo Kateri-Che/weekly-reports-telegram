@@ -27,7 +27,7 @@
  - `source` - источник трафика (organic - обычная поисковая выдача, ads - рекламное объявление)
  - `exp_group` - группа для эксперимента (0, 1, 2, 3 или 4)
 
-### Этапы реализации задачи ([посмотреть код](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/dag_telegram_report.py))
+### Этапы реализации задачи (<a href="https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/dag_telegram_report.py" target="_blank">посмотреть код</a>)
 
 **1. Подсчет метрик и формирование графиков**:
 
