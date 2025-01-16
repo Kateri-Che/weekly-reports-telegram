@@ -42,6 +42,7 @@ schedule_interval = '0 11 * * 1'
 @dag(default_args = default_args, schedule_interval = schedule_interval, catchup = False)
 def dag_82_ck():
     
+    # считаем WAU ленты новостей в разрезе по источнику трафика
     @task
     def df_WAU_feed():
         q = """
@@ -56,6 +57,7 @@ def dag_82_ck():
         df_WAU_feed = ph.read_clickhouse(q, connection = connection)
         return df_WAU_feed
     
+    # считаем WAU ленты сообщений в разрезе по источнику трафика
     @task
     def df_WAU_messages():
         q = """
@@ -70,6 +72,7 @@ def dag_82_ck():
         df_WAU_messages = ph.read_clickhouse(q, connection = connection)
         return df_WAU_messages
     
+    # считаем просмотры и лайки в разрезе по источнику трафика
     @task
     def df_lv_feed():
         q = ''' 
@@ -86,7 +89,8 @@ def dag_82_ck():
 
         df_lv_feed = ph.read_clickhouse(q, connection = connection)
         return df_lv_feed
-     
+    
+    # считаем количество сообщений в разрезе по источнику трафика
     @task
     def df_mi_message():
         q = ''' 
@@ -103,6 +107,7 @@ def dag_82_ck():
         df_mi_message = ph.read_clickhouse(q, connection = connection)
         return df_mi_message
     
+    # считаем количество взаимодействий на пользователя по ленте новостей в разрезе по странам
     @task
     def df_open_feed():
         q = """
@@ -118,6 +123,7 @@ def dag_82_ck():
         df_open_feed = ph.read_clickhouse(q, connection = connection)
         return df_open_feed
     
+    # считаем количество взаимодействий на пользователя по ленте сообщений в разрезе по странам
     @task
     def df_open_message():
         q = """
@@ -133,6 +139,7 @@ def dag_82_ck():
         df_open_message = ph.read_clickhouse(q, connection = connection)
         return df_open_message
     
+    # считаем динамику поведения пользователей ленты новостей в разрезе по полу и статусу(новые, оставшиеся, ушедшие)
     @task
     def df_st():
         q = '''
@@ -182,6 +189,7 @@ def dag_82_ck():
         df_st = df_st.pivot_table(index='week_gender', columns='status', values='num_users', fill_value=0).reset_index()
         return df_st
     
+    # считаем динамику поведения пользователей ленты сообщений в разрезе по полу и статусу(новые, оставшиеся, ушедшие)
     @task
     def df_st_m():
         q = '''
@@ -231,6 +239,7 @@ def dag_82_ck():
         df_st_m = df_st_m.pivot_table(index='week_gender', columns='status', values='num_users', fill_value=0).reset_index()
         return df_st_m
     
+    # создаем linechart WAU обеих лент
     @task
     def graph_WAU(df_WAU_feed, df_WAU_messages):
         plt.figure(figsize=(12, 10))
@@ -255,6 +264,7 @@ def dag_82_ck():
         plt.legend(title = '', loc='upper left')
         plt.tight_layout()
         
+        # преобразуем график в растровое изображение
         plot_object_WAU = io.BytesIO()
         plt.savefig(plot_object_WAU)
         plot_object_WAU.seek(0)
@@ -262,6 +272,7 @@ def dag_82_ck():
         plt.close()
         return plot_object_WAU
     
+    # создаем barchart-ы лайков, просмотров, сообщений
     @task
     def graph_lvmi(df_lv_feed, df_mi_message):
         plt.figure(figsize=(12, 16))
@@ -286,7 +297,6 @@ def dag_82_ck():
         plt.ylabel('')
         plt.legend(title = '', loc='upper left')
 
-
         plt.subplot(4, 1, 3)
         sns.barplot(data = df_mi_message, x = 'week', y = 'num_messages', hue = 'source', palette='gist_earth')
         plt.title('Количество отправленных сообщений по источнику трафика (прошлая vs текущая недели)', fontweight='bold', fontsize=12, pad=10)
@@ -296,6 +306,7 @@ def dag_82_ck():
 
         plt.tight_layout()
         
+        # преобразуем графики в растровое изображение
         plot_object_lvmi = io.BytesIO()
         plt.savefig(plot_object_lvmi)
         plot_object_lvmi.seek(0)
@@ -303,6 +314,7 @@ def dag_82_ck():
         plt.close()
         return plot_object_lvmi
     
+    # создаем barchart-ы количества взаимодействий на пользователя по обеим лентам
     @task
     def graph_country(df_open_feed, df_open_message):
         plt.figure(figsize=(16, 10))
@@ -320,7 +332,8 @@ def dag_82_ck():
         plt.xlabel('')
         plt.ylabel('')
         plt.legend(title = '', loc='upper right')
-        
+
+        # преобразуем графики в растровое изображение
         plot_object_country = io.BytesIO()
         plt.savefig(plot_object_country)
         plot_object_country.seek(0)
@@ -328,6 +341,7 @@ def dag_82_ck():
         plt.close()
         return plot_object_country
     
+    # создаем barchart-ы динамики поведения пользователей по обеим лентам
     @task
     def graph_st(df_st, df_st_m):
         
@@ -345,7 +359,6 @@ def dag_82_ck():
         ax.set_xticklabels(new_labels)
         plt.xticks(rotation=360)
 
-
         plt.subplot(2, 1, 2)
         ax_1 = df_st_m.plot(kind='bar', stacked=True, ax=plt.gca(), color=colors)  # Использовать текущую ось
 
@@ -359,6 +372,7 @@ def dag_82_ck():
 
         plt.tight_layout()
         
+        # преобразуем графики в растровое изображение
         plot_object_st = io.BytesIO()
         plt.savefig(plot_object_st)
         plot_object_st.seek(0)
@@ -366,6 +380,7 @@ def dag_82_ck():
         plt.close()
         return plot_object_st
     
+    # отправляем отчет в телеграм
     @task
     def send_telegram(plot_object_WAU, plot_object_lvmi, plot_object_country, plot_object_st):
         bot.send_photo(chat_id = chat_id, photo = plot_object_WAU)
