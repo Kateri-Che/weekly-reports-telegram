@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# для загрузки отчета в чат через бота в телеграм
 my_token = os.getenv('TELEGRAM_BOT_TOKEN')
 my_request = Request(read_timeout=10)
 bot = telegram.Bot(token = my_token, request = my_request)
