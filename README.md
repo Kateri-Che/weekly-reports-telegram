@@ -79,7 +79,12 @@
 
 **Реализовано в таске `send_telegram`**.
 
-**Граф**:
+**Граф в Airflow**:
 
 ![dag:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/telegram_report_dag.png)
+
+**Графики, отправленные в чат в Telegram**:
+
+![viz_1:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_1.jpg)  ![viz_2:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_2.jpg)
+
 
