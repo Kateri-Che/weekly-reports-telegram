@@ -37,17 +37,29 @@
 
 **Реализовано в тасках `df_WAU_feed`, `df_WAU_messages`**.
 
+**Пример датасетов после выполнения тасок (лента новостей, лента сообщений)**:
+
+![WAU_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/WAU_feed.png)    ![WAU_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/WAU_messages.png)
+
 -	Количество просмотров.
 -	Количество лайков.
 -	Количество сообщений.
 
 **Реализовано в тасках `df_lv_feed`, `df_mi_message`**.
 
+**Пример датасетов после выполнения тасок**:
+
+![lv_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/likes_views.png) ![m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/messages.png)
+
 **1.2.** В разрезе **по странам**:
 - Количество взаимодействий с лентой новостей на пользователя. 
 - Количество взаимодействий с лентой сообщений на пользователя.
-
+  
 **Реализовано в тасках `df_open_feed`, `df_open_message`**.
+  
+**Пример датасетов после выполнения тасок**:
+
+![a_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/actions_feed.png) ![a_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/actions_messages.png)
 
 **1.3.** В разрезе **по полу** и **статусу (новые, оставшиеся, ушедшие)**:
 - Динамика поведения пользователей ленты новостей.
@@ -55,10 +67,14 @@
 
 **Реализовано в тасках `df_st`, `df_st_m`**.
 
+**Пример датасетов после выполнения тасок**:
+
+![st_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_feed.png) ![st_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_messages.png)
+
 **2.** Создание графиков.
 
-**Реализовано в тасках `graph_WAU `, `graph_lvmi `, `graph_country`, `graph_st `**.
+**Реализовано в тасках `graph_WAU `, `graph_lvmi`, `graph_country`, `graph_st`**.
 
-**2.** Выгрузка графиков в телеграм.
+**3.** Выгрузка графиков в телеграм.
 
 **Реализовано в таске `send_telegram`**.
