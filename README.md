@@ -87,4 +87,4 @@
 
 ![viz_1:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_1.jpg)  ![viz_2:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_2.jpg)
 
-
+**Рассмотреть графики поближе: [скачать архив](https://github.com/Kateri-Che/weekly-reports-telegram/raw/main/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8.zip)**
