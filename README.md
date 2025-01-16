@@ -67,7 +67,7 @@
 
 **Реализовано в тасках `df_st`, `df_st_m`**.
 
-**Пример датасетов после выполнения тасок**:
+**Пример датасетов после выполнения тасок(лента новостей, лента сообщений)**:
 
 ![st_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_feed.png) ![st_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_messages.png)
 
@@ -78,3 +78,8 @@
 **3.** Выгрузка графиков в телеграм.
 
 **Реализовано в таске `send_telegram`**.
+
+**Граф**:
+
+![dag:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/telegram_report_dag.png)
+
