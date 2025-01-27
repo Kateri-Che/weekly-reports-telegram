@@ -17,7 +17,7 @@
  - matplotlib
  - os
 
-### Этапы реализации задачи ([посмотреть код](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/dag_telegram_report.py))
+### Этапы реализации проекта ([посмотреть код](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/dag_telegram_report.py))
 
 **1. Подсчет метрик и формирование графиков**:
 
