@@ -7,15 +7,7 @@
 Текущая неделя - неделя, которая началась в прошлый понедельник и только что завершилась, прошлая неделя - это 2 недели назад.
 
 ### Cтек
- - airflow
- - telegram
- - pandas
- - pandahouse
- - clickhouse
- - io
- - seaborn
- - matplotlib
- - os
+ - airflow, telegram, pandas, pandahouse, clickhouse, io, seaborn, matplotlib, os
 
 ### Этапы реализации проекта ([посмотреть код](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/dag_telegram_report.py))
 
