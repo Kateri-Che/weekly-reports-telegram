@@ -23,7 +23,7 @@
 
 **Пример датасетов после выполнения тасок (лента новостей, лента сообщений)**:
 
-![WAU_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/WAU_feed.png)    ![WAU_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/WAU_messages.png)
+![WAU_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/WAU_feed.png)    ![WAU_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/WAU_messages.png)
 
 -	Количество просмотров.
 -	Количество лайков.
@@ -33,7 +33,7 @@
 
 **Пример датасетов после выполнения тасок**:
 
-![lv_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/likes_views.png) ![m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/messages.png)
+![lv_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/likes_views.png) ![m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/messages.png)
 
 **1.2.** В разрезе **по странам**:
 - Количество взаимодействий с лентой новостей на пользователя. 
@@ -43,7 +43,7 @@
   
 **Пример датасетов после выполнения тасок**:
 
-![a_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/actions_feed.png) ![a_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/actions_messages.png)
+![a_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/actions_feed.png) ![a_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/actions_messages.png)
 
 **1.3.** В разрезе **по полу** и **статусу (новые, оставшиеся, ушедшие)**:
 - Динамика поведения пользователей ленты новостей.
@@ -53,7 +53,7 @@
 
 **Пример датасетов после выполнения тасок(лента новостей, лента сообщений)**:
 
-![st_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_feed.png) ![st_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/gender_status_messages.png)
+![st_f](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/gender_status_feed.png) ![st_m](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/gender_status_messages.png)
 
 **2.** Создание графиков.
 
@@ -71,10 +71,10 @@
 
 **Граф в Airflow**:
 
-![dag:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/telegram_report_dag.png)
+![dag:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/telegram_report_dag.png)
 
 **Графики, отправленные в чат в Telegram**:
 
-![viz_1:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_1.jpg)  ![viz_2:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screen_2.jpg)
+![viz_1:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/screen_1.jpg)  ![viz_2:](https://github.com/Kateri-Che/weekly-reports-telegram/blob/main/screenshots/screen_2.jpg)
 
 **Рассмотреть графики поближе: [открыть ссылку](https://drive.google.com/drive/folders/1a_bX1HS6_3_ffbbwRxv3E6YKDc1XEJBD?usp=sharing)**
